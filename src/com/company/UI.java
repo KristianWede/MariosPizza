@@ -6,7 +6,7 @@ public class UI {
 
     public void execute() throws InterruptedException {
         PizzaMenu pizzaMenu = new PizzaMenu();
-
+        pizzaMenu.erklaerPizza();
         System.out.println("Starting up MariOS v0.8...");
 
         valgMenu();

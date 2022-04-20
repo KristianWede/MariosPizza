@@ -3,13 +3,9 @@ package com.company;
 import java.util.Scanner;
 
 public class UI {
+
     public void execute() throws InterruptedException {
         PizzaMenu pizzaMenu = new PizzaMenu();
-        BestillingsListe bestillingsListe = new BestillingsListe();
-        TilføjPizza tilføjPizza = new TilføjPizza();
-        HentPizza hentPizza = new HentPizza();
-        AnnullerPizza annullerPizza = new AnnullerPizza();
-
 
         System.out.println("Starting up MariOS v0.8...");
 

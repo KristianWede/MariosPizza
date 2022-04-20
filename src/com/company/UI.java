@@ -11,6 +11,7 @@ public class UI {
 
         valgMenu();
 
+
     }
 
     public void valgMenu() throws InterruptedException {

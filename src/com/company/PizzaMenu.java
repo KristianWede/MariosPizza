@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class PizzaMenu {
 
     private ArrayList<Pizza> pizzaArrayList = new ArrayList<>();
+    private ArrayList<Pizza> BestiltPizzaArrayList = new ArrayList<>();
 
     public void erklaerPizza() {
         Pizza vesuvio1 = new Pizza(1, "Vesuvio: tomatsauce,ost,skinke og oregano.", 57);
@@ -35,6 +36,15 @@ public class PizzaMenu {
         String enter = sc.nextLine();
     }
 
+    public void printBestiltPizzaMenu() {
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < BestiltPizzaArrayList.size(); i++) {
+            System.out.println(BestiltPizzaArrayList.get(i));
+        }
+        System.out.println("Tryk på enter for at fortsætte...");
+        String enter = sc.nextLine();
+    }
+
     public void tilfoejPizza() {
         int valg;
         Scanner sc = new Scanner(System.in);
@@ -42,7 +52,10 @@ public class PizzaMenu {
         valg = sc.nextInt();
 
         for (int i = 0; i < pizzaArrayList.size(); i++) {
-
+            if ( pizzaArrayList.get(valg) == pizzaArrayList.get(i)) {
+                Pizza tmp = pizzaArrayList.get(i);
+                BestiltPizzaArrayList.add(tmp);
+            }
         }
 
     }

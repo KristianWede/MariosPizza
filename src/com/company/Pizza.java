@@ -35,4 +35,9 @@ public class Pizza {
     public int getPizzaPris() {
         return pizzaPris;
     }
+
+    @Override
+    public String toString() {
+        return "Nr " + pizzaNum + ". " + pizzaBeskrivelse + " - " + pizzaPris + "kr.-";
+    }
 }

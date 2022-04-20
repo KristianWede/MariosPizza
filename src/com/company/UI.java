@@ -5,8 +5,6 @@ import java.util.Scanner;
 public class UI {
 
     public void execute() throws InterruptedException {
-        PizzaMenu pizzaMenu = new PizzaMenu();
-        pizzaMenu.erklaerPizza();
         System.out.println("Starting up MariOS v0.8...");
 
         valgMenu();
@@ -16,6 +14,8 @@ public class UI {
 
     public void valgMenu() throws InterruptedException {
         Scanner sc = new Scanner(System.in);
+        PizzaMenu pizzaMenu = new PizzaMenu();
+        pizzaMenu.erklaerPizza();
 
         do {
 
@@ -24,7 +24,7 @@ public class UI {
             int valg = sc.nextInt();
 
             switch (valg) {
-                case 1 -> System.out.println("Case1");
+                case 1 -> pizzaMenu.printPizzaMenu();
                 case 2 -> System.out.println("Case2");
                 case 3 -> System.out.println("Case3");
                 case 4 -> System.out.println("Case4");

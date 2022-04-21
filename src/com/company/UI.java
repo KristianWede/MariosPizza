@@ -15,7 +15,7 @@ public class UI {
         PizzaMenu pizzaMenu = new PizzaMenu();
         pizzaMenu.erklaerPizza();
 
-        do {
+        //do {
 
             printValg();
 
@@ -27,15 +27,15 @@ public class UI {
                 case 3 -> pizzaMenu.tilfoejPizza();
                 case 4 -> pizzaMenu.tidspunkt();
                 case 5 -> System.out.println("Case5");
-                case 6 -> {
-                    System.exit(0);
-                }
+                //case 6 -> {
+                   // System.exit(0);
+                //}
                 default -> {
                     System.out.println("Ikke et validt svar!");
                 }
             }
 
-        }while(true);
+        //}while(true);
     }
 
    private void printValg() throws InterruptedException {

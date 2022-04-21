@@ -103,6 +103,6 @@ public class PizzaMenu {
                     }
                 }
             }
-        System.out.println("Ordre bestilt!");
+        System.out.println("Ordre bestilt.");
     }
 }

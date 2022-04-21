@@ -106,7 +106,7 @@ public class PizzaMenu {
     public void fjernPizzaValg(){
         System.out.println("Hvad vil du fjerne fra en ordre?");
         System.out.println("""
-            1. Fjern en el flere pizzaer med kundeTlf og PizzaNummer.
+            1. Fjern en Pizza med ordreplads.
             2. Fjern hele ordre med kundeTlf.
             """);
         Scanner sc = new Scanner(System.in);
@@ -119,16 +119,26 @@ public class PizzaMenu {
     }
 
     public void fjernEnPizza() {
+        System.out.println("Indtast ordres nummer som skal fjernes.");
 
     }
 
     public void fjernHeleOrdre() {
+        System.out.println("Indtast kundens telefonnummer for at fjerne bestillingen.");
         Scanner sc = new Scanner(System.in);
-        int KundeTlf = sc.nextInt();
+        int kundeTlf = sc.nextInt();
+        boolean ordreFundet = false;
         for ( int i = 0; i < BestiltPizzaArrayList.size(); i++){
-            if (BestiltPizzaArrayList.get(i).getKundeTlf() == KundeTlf ){
-                //Ikke færdigt.
+            if (BestiltPizzaArrayList.get(i).getKundeTlf() == kundeTlf ){
+                BestiltPizzaArrayList.remove(i);
+                i--;
+                ordreFundet = true;
             }
+        }
+        if (ordreFundet) {
+            System.out.println("Ordre fjernet.");
+        } else {
+            System.out.println("Kunne ikke finde nogen ordre med tlf: " + kundeTlf);
         }
     }
 

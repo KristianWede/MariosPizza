@@ -21,7 +21,6 @@ public class Color {
             case "cyan" -> ANSI_CYAN;
             default -> ANSI_RESET;
         };
-
         return color + text + ANSI_RESET;
     }
 }

@@ -3,13 +3,17 @@ package com.company;
 public class Pizza {
 
     private int pizzaNum;
+    private String pizzaName;
     private String pizzaBeskrivelse;
     private int pizzaPris;
 
-    public Pizza(int pizzaNum, String pizzaBeskrivelse, int pizzaPris) {
+
+    public Pizza(int pizzaNum,String pizzaName, String pizzaBeskrivelse, int pizzaPris) {
         this.pizzaNum = pizzaNum;
+        this.pizzaName = pizzaName;
         this.pizzaBeskrivelse = pizzaBeskrivelse;
         this.pizzaPris = pizzaPris;
+
     }
 
     public void setPizzaNum(int pizzaNum) {

@@ -6,9 +6,7 @@ public class UI {
 
     public void execute() throws InterruptedException {
         System.out.println("Starting up MariOS v0.8...");
-
         valgMenu();
-
 
     }
 
@@ -40,7 +38,7 @@ public class UI {
         }while(true);
     }
 
-    private void printValg() throws InterruptedException {
+   private void printValg() throws InterruptedException {
         System.out.println("");
         System.out.println("Udprinter menu...");
         Thread.sleep(1000);

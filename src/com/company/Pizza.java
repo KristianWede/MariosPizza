@@ -7,8 +7,7 @@ public class Pizza {
     private String pizzaBeskrivelse;
     private int pizzaPris;
 
-
-    public Pizza(int pizzaNum,String pizzaName, String pizzaBeskrivelse, int pizzaPris) {
+    public Pizza(int pizzaNum, String pizzaName, String pizzaBeskrivelse, int pizzaPris) {
         this.pizzaNum = pizzaNum;
         this.pizzaName = pizzaName;
         this.pizzaBeskrivelse = pizzaBeskrivelse;
@@ -39,6 +38,15 @@ public class Pizza {
     public int getPizzaPris() {
         return pizzaPris;
     }
+
+    public String getPizzaName() {
+        return pizzaName;
+    }
+
+    public void setPizzaName(String pizzaName) {
+        this.pizzaName = pizzaName;
+    }
+
 
     @Override
     public String toString() {

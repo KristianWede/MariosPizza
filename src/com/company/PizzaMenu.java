@@ -56,17 +56,50 @@ public class PizzaMenu {
     }
 
     public void tilfoejPizza() {
-        int valg;
+
         Scanner sc = new Scanner(System.in);
-        System.out.println("Indtast nummer af pizza du vil bestille.");
+        System.out.println("Antal af pizzaer du vil bestille: ");
+        int pizzaAntal = sc.nextInt();
+        System.out.println("Hvilken pizza vil du gerne have?");
+        int pizzaNummer = sc.nextInt();
+
+        //Bestilling bestilling = new Bestilling(pizzaAntal);
+
+        for(int i = 0; i<pizzaAntal; i++){
+            System.out.println("Pizza nummer: " + (i+1));
+
+            for (int k = 0; k < pizzaArrayList.size(); k++) {
+                    if(pizzaArrayList.get(k).getPizzaNum()==pizzaNummer){
+                    System.out.println(pizzaArrayList.get(k));
+                    }
+
+            }
+
+        }
+
+
+
+
+
+        int valg;
+
+        System.out.println("Indtast nummer af pizza du vil bestille");
         valg = sc.nextInt();
 
-        for (int i = 0; i < pizzaArrayList.size(); i++) {
-            if ( pizzaArrayList.get(valg) == pizzaArrayList.get(i)) {
-                Pizza tmp = pizzaArrayList.get(i);
-                BestiltPizzaArrayList.add(tmp);
+        for(int i = 0; i <valg;i++) {
+            System.out.println("Hvilken pizza vil du gerne bestille?");
+            for (int j = 0; j < pizzaArrayList.size(); j++) {
+                if ( pizzaArrayList.get(valg) == pizzaArrayList.get(i)) {
+                    Pizza tmp = pizzaArrayList.get(i);
+                    BestiltPizzaArrayList.add(tmp);
+                }
             }
         }
+
+
+
+
+
 
     }
 }

@@ -14,6 +14,17 @@ private String takeaway;
         this.takeaway = takeaway;
     }
 
+    public String getTidspunkt() {
+        return tidspunkt;
+    }
+
+    public int getKundeTlf() {
+        return kundeTlf;
+    }
+
+    public String getTakeaway() {
+        return takeaway;
+    }
 
     @Override
     public String toString() {

@@ -103,11 +103,33 @@ public class PizzaMenu {
         System.out.println("Ordre bestilt.");
     }
 
-    public void fjernPizza(){
+    public void fjernPizzaValg(){
+        System.out.println("Hvad vil du fjerne fra en ordre?");
+        System.out.println("""
+            1. Fjern en el flere pizzaer med kundeTlf og PizzaNummer.
+            2. Fjern hele ordre med kundeTlf.
+            """);
+        Scanner sc = new Scanner(System.in);
+        int valg = sc.nextInt();
+        switch(valg){
+            case 1 -> fjernEnPizza();
+            case 2 -> fjernHeleOrdre();
+            default -> System.out.println("Ikke et validt svar!");
+        }
+    }
 
-
+    public void fjernEnPizza() {
 
     }
 
+    public void fjernHeleOrdre() {
+        Scanner sc = new Scanner(System.in);
+        int KundeTlf = sc.nextInt();
+        for ( int i = 0; i < BestiltPizzaArrayList.size(); i++){
+            if (BestiltPizzaArrayList.get(i).getKundeTlf() == KundeTlf ){
+                //Ikke færdigt.
+            }
+        }
+    }
 
 }

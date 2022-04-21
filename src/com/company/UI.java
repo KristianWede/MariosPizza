@@ -25,14 +25,10 @@ public class UI {
                 case 1 -> pizzaMenu.printPizzaMenu();
                 case 2 -> pizzaMenu.printBestiltPizzaMenu();
                 case 3 -> pizzaMenu.tilfoejPizza();
-                case 4 -> pizzaMenu.fjernPizza();
+                case 4 -> pizzaMenu.fjernPizzaValg();
                 case 5 -> System.out.println("Case5");
-                case 6 -> {
-                    System.exit(0);
-                }
-                default -> {
-                    System.out.println("Ikke et validt svar!");
-                }
+                case 6 -> System.exit(0);
+                default -> System.out.println("Ikke et validt svar!");
             }
 
         }while(true);

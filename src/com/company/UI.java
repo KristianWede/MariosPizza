@@ -25,7 +25,7 @@ public class UI {
                 case 1 -> pizzaMenu.printPizzaMenu();
                 case 2 -> pizzaMenu.printBestiltPizzaMenu();
                 case 3 -> pizzaMenu.tilfoejPizza();
-                case 4 -> System.out.println("Case4");
+                case 4 -> pizzaMenu.tidspunkt();
                 case 5 -> System.out.println("Case5");
                 case 6 -> {
                     System.exit(0);

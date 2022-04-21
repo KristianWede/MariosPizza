@@ -1,12 +1,17 @@
 package com.company;
 
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+
+import java.util.Locale;
 import java.util.Scanner;
 
 public class PizzaMenu {
 
     private ArrayList<Pizza> pizzaArrayList = new ArrayList<>();
-    private ArrayList<Pizza> BestiltPizzaArrayList = new ArrayList<>();
+    private ArrayList<BestiltPizza> BestiltPizzaArrayList = new ArrayList<>();
 
     public void erklaerPizza() {
         Pizza vesuvio1 = new Pizza(1, "Vesuvio:", "tomatsauce,ost,skinke og oregano.", 57);
@@ -48,58 +53,56 @@ public class PizzaMenu {
 
     public void printBestiltPizzaMenu() {
         Scanner sc = new Scanner(System.in);
-        for (int i = 0; i < BestiltPizzaArrayList.size(); i++) {
-            System.out.println(BestiltPizzaArrayList.get(i));
+        if (BestiltPizzaArrayList.size() != 0) {
+            for (int i = 0; i < BestiltPizzaArrayList.size(); i++) {
+                System.out.println(BestiltPizzaArrayList.get(i));
+            }
+        } else {
+            System.out.println("Ingen pizzaer bestilt!");
         }
         System.out.println("Tryk på enter for at fortsætte...");
         String enter = sc.nextLine();
     }
 
+    public String tidspunkt(){
+        String tid = String.valueOf(LocalTime.now());
+        String bestillingsTid = tid.substring(0,5);
+        return bestillingsTid;
+    }
+
     public void tilfoejPizza() {
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Antal af pizzaer du vil bestille: ");
+        System.out.println("Indtast antal af pizzaer du vil bestille: ");
         int pizzaAntal = sc.nextInt();
-        System.out.println("Hvilken pizza vil du gerne have?");
+        System.out.println("Hvilken pizza vil du gerne bestille?");
         int pizzaNummer = sc.nextInt();
+        System.out.println("Indtast kundens tlf:");
+        int kundeTlf = sc.nextInt();
 
-        //Bestilling bestilling = new Bestilling(pizzaAntal);
+        boolean svar = false;
+        String takeAway;
+        System.out.println("Takeaway? ja/nej");
 
-        for(int i = 0; i<pizzaAntal; i++){
-            System.out.println("Pizza nummer: " + (i+1));
-
-            for (int k = 0; k < pizzaArrayList.size(); k++) {
-                    if(pizzaArrayList.get(k).getPizzaNum()==pizzaNummer){
-                    System.out.println(pizzaArrayList.get(k));
-                    }
-
+        do {
+            takeAway = sc.next().toLowerCase();
+            if (takeAway.equals("ja") || takeAway.equals("nej")) {
+                svar = true;
+            } else {
+                System.out.println("Skriv enten ja eller nej.");
             }
 
-        }
+        }while(!svar);
 
-
-
-
-
-        int valg;
-
-        System.out.println("Indtast nummer af pizza du vil bestille");
-        valg = sc.nextInt();
-
-        for(int i = 0; i <valg;i++) {
-            System.out.println("Hvilken pizza vil du gerne bestille?");
-            for (int j = 0; j < pizzaArrayList.size(); j++) {
-                if ( pizzaArrayList.get(valg) == pizzaArrayList.get(i)) {
+            for (int i = 0; i < pizzaArrayList.size(); i++) {
+                if ( pizzaArrayList.get(pizzaNummer) == pizzaArrayList.get(i)) {
                     Pizza tmp = pizzaArrayList.get(i);
-                    BestiltPizzaArrayList.add(tmp);
+                    BestiltPizza tmp2 = new BestiltPizza(tmp.getPizzaNum(),tmp.getPizzaName(),tmp.getPizzaBeskrivelse(),tmp.getPizzaPris(),kundeTlf,tidspunkt(),takeAway);
+                    for( int j = 0; j < pizzaAntal; j++) {
+                        BestiltPizzaArrayList.add(tmp2);
+                    }
                 }
             }
-        }
-
-
-
-
-
-
+        System.out.println("Ordre bestilt!");
     }
 }

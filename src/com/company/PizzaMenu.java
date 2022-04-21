@@ -87,9 +87,10 @@ public class PizzaMenu {
             } else {
                 System.out.println("Skriv enten ja eller nej.");
             }
-
         }while(!svar);
 
+
+            //Sammenligner indtastet pizzanummer og finder den rette pizza, hvorefter den så bliver lavet om til et bestiltPizza plus alt andet indtastet info.
             for (int i = 0; i < pizzaArrayList.size(); i++) {
                 if ( pizzaArrayList.get(pizzaNummer) == pizzaArrayList.get(i)) {
                     Pizza tmp = pizzaArrayList.get(i);
@@ -101,4 +102,12 @@ public class PizzaMenu {
             }
         System.out.println("Ordre bestilt.");
     }
+
+    public void fjernPizza(){
+
+
+
+    }
+
+
 }

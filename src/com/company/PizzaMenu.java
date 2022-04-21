@@ -46,6 +46,41 @@ public class PizzaMenu {
         String enter = sc.nextLine();
     }
 
+
+    public void tilfoejPizza() {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Antal af pizzaer du vil bestille: ");
+        int pizzaAntal = sc.nextInt();
+
+        //Bestilling bestilling = new Bestilling(pizzaAntal);
+
+        for(int i = 0; i<pizzaAntal; i++){
+            System.out.println("Hvilken pizza vil du gerne have?");
+            int pizzaNummer = sc.nextInt();
+            System.out.println("Pizza nummer: " + (i+1));
+                for (int k = 0; k < pizzaArrayList.size(); k++) {
+
+                     if (pizzaArrayList.get(k).getPizzaNum() == pizzaNummer) {
+                        System.out.println(pizzaArrayList.get(k));
+
+                }
+            }
+        }
+        System.out.println();
+    }
+    public void addPizzaToOrdreList(Pizza pizza){
+        BestiltPizzaArrayList.add(pizza);
+    }
+
+    public void sætIndIOrdreArray(int pizzaNum, String pizzaName){
+        if(pizzaNum != 0){
+            //addPizzaToOrdreList(Pizza);
+
+        }
+
+    }
+
     public void printBestiltPizzaMenu() {
         Scanner sc = new Scanner(System.in);
         for (int i = 0; i < BestiltPizzaArrayList.size(); i++) {
@@ -55,32 +90,12 @@ public class PizzaMenu {
         String enter = sc.nextLine();
     }
 
-    public void tilfoejPizza() {
-
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Antal af pizzaer du vil bestille: ");
-        int pizzaAntal = sc.nextInt();
-        System.out.println("Hvilken pizza vil du gerne have?");
-        int pizzaNummer = sc.nextInt();
-
-        //Bestilling bestilling = new Bestilling(pizzaAntal);
-
-        for(int i = 0; i<pizzaAntal; i++){
-            System.out.println("Pizza nummer: " + (i+1));
-
-            for (int k = 0; k < pizzaArrayList.size(); k++) {
-                    if(pizzaArrayList.get(k).getPizzaNum()==pizzaNummer){
-                    System.out.println(pizzaArrayList.get(k));
-                    }
-
-            }
-
-        }
 
 
 
 
 
+        /*
         int valg;
 
         System.out.println("Indtast nummer af pizza du vil bestille");
@@ -92,14 +107,5 @@ public class PizzaMenu {
                 if ( pizzaArrayList.get(valg) == pizzaArrayList.get(i)) {
                     Pizza tmp = pizzaArrayList.get(i);
                     BestiltPizzaArrayList.add(tmp);
-                }
+                }*/
             }
-        }
-
-
-
-
-
-
-    }
-}

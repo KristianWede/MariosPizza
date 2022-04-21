@@ -73,13 +73,13 @@ public class PizzaMenu {
         BestiltPizzaArrayList.add(pizza);
     }
 
-    public void sætIndIOrdreArray(int pizzaNum, String pizzaName){
-        if(pizzaNum != 0){
+    public void sætIndIOrdreArray(){
+        BestiltPizzaArrayList.add();
             //addPizzaToOrdreList(Pizza);
 
         }
 
-    }
+
 
     public void printBestiltPizzaMenu() {
         Scanner sc = new Scanner(System.in);

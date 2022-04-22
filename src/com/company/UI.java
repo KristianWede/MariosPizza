@@ -47,7 +47,7 @@ public class UI {
         System.out.println("1: Menukort");
         System.out.println("2: Liste over bestillinger");
         System.out.println("3: Tilføj ordre");
-        System.out.println("4: Afhent ordre");
+        System.out.println("4: Fjern ordre");
         System.out.println("5: Luk ned");
 
     }

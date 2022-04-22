@@ -125,6 +125,10 @@ public class PizzaMenu {
     //Sammenligner indtastet pizzanummer og finder den rette pizza, hvorefter den så bliver lavet om til et bestiltPizza plus alt andet indtastet info.
 
     public void fjernPizzaValg() {
+        if (BestiltPizzaArrayList.size() == 0) {
+            System.out.println("Der er ingen pizzaer at fjerne!");
+        } else {
+
         System.out.println("Hvad vil du fjerne fra en ordre?");
         System.out.println("""
                 1. Fjern en Pizza med ordreplads.
@@ -138,44 +142,46 @@ public class PizzaMenu {
             case 2 -> fjernHeleOrdre();
             default -> System.out.println("Ikke et validt svar!");
         }
+        }
     }
 
     public void fjernEnPizza() {
-        System.out.println("Indtast ordres nummer som skal fjernes.");
 
-        if (BestiltPizzaArrayList.size() != 0) {
-            for (int i = 0; i < BestiltPizzaArrayList.size(); i++) {
-                System.out.println("#" + (i + 1) + " " + BestiltPizzaArrayList.get(i));
+            System.out.println("Indtast ordres nummer som skal fjernes.");
+            if (BestiltPizzaArrayList.size() != 0) {
+                for (int i = 0; i < BestiltPizzaArrayList.size(); i++) {
+                    System.out.println("#" + (i + 1) + " " + BestiltPizzaArrayList.get(i));
+                }
+            } else {
+                System.out.println("Ingen pizzaer bestilt!");
             }
-        } else {
-            System.out.println("Ingen pizzaer bestilt!");
+
+            Scanner sc = new Scanner(System.in);
+            int pizzaNum = sc.nextInt();
+            BestiltPizzaArrayList.remove(pizzaNum - 1);
         }
 
-        Scanner sc = new Scanner(System.in);
-        int pizzaNum = sc.nextInt();
-        BestiltPizzaArrayList.remove(pizzaNum - 1);
-    }
 
     public void fjernHeleOrdre() {
-        System.out.println("Indtast kundens telefonnummer for at fjerne bestillingen.");
-        Scanner sc = new Scanner(System.in);
 
-        int kundeTlf = sc.nextInt();
-        boolean ordreFundet = false;
+            System.out.println("Indtast kundens telefonnummer for at fjerne bestillingen.");
+            Scanner sc = new Scanner(System.in);
 
-        for (int i = 0; i < BestiltPizzaArrayList.size(); i++) {
-            if (BestiltPizzaArrayList.get(i).getKundeTlf() == kundeTlf) {
-                BestiltPizzaArrayList.remove(i);
-                i--;
-                ordreFundet = true;
+            int kundeTlf = sc.nextInt();
+            boolean ordreFundet = false;
+
+            for (int i = 0; i < BestiltPizzaArrayList.size(); i++) {
+                if (BestiltPizzaArrayList.get(i).getKundeTlf() == kundeTlf) {
+                    BestiltPizzaArrayList.remove(i);
+                    i--;
+                    ordreFundet = true;
+                }
+            }
+
+            if (ordreFundet) {
+                System.out.println("Ordre fjernet.");
+            } else {
+                System.out.println("Kunne ikke finde nogen ordre med tlf: " + kundeTlf);
             }
         }
-
-        if (ordreFundet) {
-            System.out.println("Ordre fjernet.");
-        } else {
-            System.out.println("Kunne ikke finde nogen ordre med tlf: " + kundeTlf);
-        }
     }
-
-}

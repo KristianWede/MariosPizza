@@ -21,7 +21,15 @@ public class UI {
 
 
     public void execute() throws InterruptedException {
-        System.out.println("Starting up MariOS v0.8...");
+        System.out.println("\n" +
+                "███████╗████████╗ █████╗ ██████╗ ████████╗██╗███╗   ██╗ ██████╗     ██╗   ██╗██████╗     ███╗   ███╗ █████╗ ██████╗ ██╗ ██████╗ ███████╗    ██╗   ██╗ ██████╗     █████╗          \n" +
+                "██╔════╝╚══██╔══╝██╔══██╗██╔══██╗╚══██╔══╝██║████╗  ██║██╔════╝     ██║   ██║██╔══██╗    ████╗ ████║██╔══██╗██╔══██╗██║██╔═══██╗██╔════╝    ██║   ██║██╔═████╗   ██╔══██╗         \n" +
+                "███████╗   ██║   ███████║██████╔╝   ██║   ██║██╔██╗ ██║██║  ███╗    ██║   ██║██████╔╝    ██╔████╔██║███████║██████╔╝██║██║   ██║███████╗    ██║   ██║██║██╔██║   ╚█████╔╝         \n" +
+                "╚════██║   ██║   ██╔══██║██╔══██╗   ██║   ██║██║╚██╗██║██║   ██║    ██║   ██║██╔═══╝     ██║╚██╔╝██║██╔══██║██╔══██╗██║██║   ██║╚════██║    ╚██╗ ██╔╝████╔╝██║   ██╔══██╗         \n" +
+                "███████║   ██║   ██║  ██║██║  ██║   ██║   ██║██║ ╚████║╚██████╔╝    ╚██████╔╝██║         ██║ ╚═╝ ██║██║  ██║██║  ██║██║╚██████╔╝███████║     ╚████╔╝ ╚██████╔╝██╗╚█████╔╝██╗██╗██╗\n" +
+                "╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝╚═╝  ╚═══╝ ╚═════╝      ╚═════╝ ╚═╝         ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝ ╚═════╝ ╚══════╝      ╚═══╝   ╚═════╝ ╚═╝ ╚════╝ ╚═╝╚═╝╚═╝\n" +
+                "                                                                                                                                                                                  \n" + fReset +
+        red +" ███████████████████████████████████████████████████████" +fReset +" ███████████████████████████████████████████████████████████" + green + " █████████████████████████████████████████████████████████████" + fReset);
         valgMenu();
 
     }
@@ -51,13 +59,20 @@ public class UI {
 
     private void printValg() throws InterruptedException {
         System.out.println("");
-        System.out.println("Udprinter menu...");
-        Thread.sleep(1000);
-        System.out.println(yellow +"1: Menukort" + fReset);
-        System.out.println("2: Liste over bestillinger");
-        System.out.println("3: Tilføj ordre");
-        System.out.println("4: Fjern ordre");
-        System.out.println("5: Luk ned");
+        System.out.print(yellow + "Udprinter menu" + fReset);
+        Thread.sleep(200);
+        System.out.print(".");
+        Thread.sleep(200);
+        System.out.print(".");
+        Thread.sleep(200);
+        System.out.print(".");
+        Thread.sleep(200);
+        System.out.println("");
+        System.out.println( blue +"1: Menukort" + fReset);
+        System.out.println( yellow + "2: Liste over bestillinger" +fReset);
+        System.out.println( blue +"3: Tilføj ordre" + fReset);
+        System.out.println(yellow + "4: Fjern ordre" + fReset);
+        System.out.println(red + "5: Luk ned" + fReset);
 
     }
 

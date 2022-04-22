@@ -60,13 +60,13 @@ public class UI {
     private void printValg() throws InterruptedException {
         System.out.println("");
         System.out.print(yellow + "Udprinter menu" + fReset);
-        Thread.sleep(200);
+        Thread.sleep(350);
         System.out.print(".");
-        Thread.sleep(200);
+        Thread.sleep(350);
         System.out.print(".");
-        Thread.sleep(200);
+        Thread.sleep(350);
         System.out.print(".");
-        Thread.sleep(200);
+        Thread.sleep(1000);
         System.out.println("");
         System.out.println( blue +"1: Menukort" + fReset);
         System.out.println( yellow + "2: Liste over bestillinger" +fReset);

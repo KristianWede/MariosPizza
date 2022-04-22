@@ -167,6 +167,10 @@ public class PizzaMenu {
             System.out.println("Indtast kundens telefonnummer for at fjerne bestillingen.");
             Scanner sc = new Scanner(System.in);
 
+            for (int i = BestiltPizzaArrayList.size()-1; i >= 0; i--) {
+                System.out.println("#" + (i + 1) + " " + BestiltPizzaArrayList.get(i));
+            }
+
             int kundeTlf = sc.nextInt();
             boolean ordreFundet = false;
 

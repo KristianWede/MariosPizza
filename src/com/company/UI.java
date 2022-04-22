@@ -2,7 +2,16 @@ package com.company;
 
 import java.util.Scanner;
 
+
 public class UI {
+
+    public String red = "\u001B[31m";
+    public String fReset = "\u001B[0m";
+    public String green = "\u001B[32m";
+    public String blue = "\u001B[34m";
+    public String yellow = "\u001B[33m";
+    public String cyan = "\u001B[36m";
+
 
     private Color colorClass = new Color();
 
@@ -44,7 +53,7 @@ public class UI {
         System.out.println("");
         System.out.println("Udprinter menu...");
         Thread.sleep(1000);
-        System.out.println("1: Menukort");
+        System.out.println(yellow +"1: Menukort" + fReset);
         System.out.println("2: Liste over bestillinger");
         System.out.println("3: Tilføj ordre");
         System.out.println("4: Fjern ordre");

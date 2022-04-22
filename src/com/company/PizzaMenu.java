@@ -53,7 +53,7 @@ public class PizzaMenu {
         Scanner sc = new Scanner(System.in);
 
         if (BestiltPizzaArrayList.size() != 0) {
-            for (int i = 0; i < BestiltPizzaArrayList.size(); i++) {
+            for (int i = BestiltPizzaArrayList.size()-1; i >= 0; i--) {
                 System.out.println("#" + (i + 1) + " " + BestiltPizzaArrayList.get(i));
             }
         } else {
@@ -149,7 +149,7 @@ public class PizzaMenu {
 
             System.out.println("Indtast ordres nummer som skal fjernes.");
             if (BestiltPizzaArrayList.size() != 0) {
-                for (int i = 0; i < BestiltPizzaArrayList.size(); i++) {
+                for (int i = BestiltPizzaArrayList.size()-1; i >= 0; i--) {
                     System.out.println("#" + (i + 1) + " " + BestiltPizzaArrayList.get(i));
                 }
             } else {

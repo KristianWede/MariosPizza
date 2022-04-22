@@ -18,10 +18,10 @@ public class PizzaMenu {
         Pizza bertil6 = new Pizza(6, "Bertil:", "tomatsauce,ost,bacon og oregano.", 57);
         Pizza silvia7 = new Pizza(7, "Silvia:", "tomatsauce,ost,pepperoni,rød peber,løg,oliven og oregano.", 61);
         Pizza victoria8 = new Pizza(8, "Carbona:", "tomatsauce,ost,kødsauce,spaghetti,cocktailpølser og oregano.", 61);
-        Pizza hawaii = new Pizza(9,"Hawaii:", "Tomat Sauce, ost, skinke, ananas.",59);
-        Pizza mafiosa = new Pizza (10,"Mafiosa:", "Tomat Sauce, ost, skinke, champignon, paprika, hvidløg på, chili på",59);
-        Pizza vienetta = new Pizza (11,"Vienetta:", "Tomat Sauce, ost, kylling, paprika, ærter og majs.", 59);
-        Pizza mexicana = new Pizza (12,"Mexicana:", "Tomat Sauce, ost, kødsauce, paprika, chili på", 60);
+        Pizza hawaii = new Pizza(9, "Hawaii:", "Tomat Sauce, ost, skinke, ananas.", 59);
+        Pizza mafiosa = new Pizza(10, "Mafiosa:", "Tomat Sauce, ost, skinke, champignon, paprika, hvidløg på, chili på", 59);
+        Pizza vienetta = new Pizza(11, "Vienetta:", "Tomat Sauce, ost, kylling, paprika, ærter og majs.", 59);
+        Pizza mexicana = new Pizza(12, "Mexicana:", "Tomat Sauce, ost, kødsauce, paprika, chili på", 60);
 
         pizzaArrayList.add(vesuvio1);
         pizzaArrayList.add(amerikaner2);
@@ -40,18 +40,21 @@ public class PizzaMenu {
 
     public void printPizzaMenu() {
         Scanner sc = new Scanner(System.in);
+
         for (int i = 0; i < pizzaArrayList.size(); i++) {
             System.out.println(pizzaArrayList.get(i));
         }
+
         System.out.println("Tryk på enter for at fortsætte...");
         String enter = sc.nextLine();
     }
 
     public void printBestiltPizzaMenu() {
         Scanner sc = new Scanner(System.in);
+
         if (BestiltPizzaArrayList.size() != 0) {
             for (int i = 0; i < BestiltPizzaArrayList.size(); i++) {
-                System.out.println("#" + (i+1) + " " + BestiltPizzaArrayList.get(i));
+                System.out.println("#" + (i + 1) + " " + BestiltPizzaArrayList.get(i));
             }
         } else {
             System.out.println("Ingen pizzaer bestilt!");
@@ -60,9 +63,9 @@ public class PizzaMenu {
         String enter = sc.nextLine();
     }
 
-    public String tidspunkt(){
+    public String tidspunkt() {
         String tid = String.valueOf(LocalTime.now());
-        String bestillingsTid = tid.substring(0,5);
+        String bestillingsTid = tid.substring(0, 5);
         return bestillingsTid;
     }
 
@@ -109,17 +112,18 @@ public class PizzaMenu {
         System.out.println("Ordre bestilt.");
     }
 
-        //Sammenligner indtastet pizzanummer og finder den rette pizza, hvorefter den så bliver lavet om til et bestiltPizza plus alt andet indtastet info.
+    //Sammenligner indtastet pizzanummer og finder den rette pizza, hvorefter den så bliver lavet om til et bestiltPizza plus alt andet indtastet info.
 
-    public void fjernPizzaValg(){
+    public void fjernPizzaValg() {
         System.out.println("Hvad vil du fjerne fra en ordre?");
         System.out.println("""
-            1. Fjern en Pizza med ordreplads.
-            2. Fjern hele ordre med kundeTlf.
-            """);
+                1. Fjern en Pizza med ordreplads.
+                2. Fjern hele ordre med kundeTlf.
+                """);
         Scanner sc = new Scanner(System.in);
         int valg = sc.nextInt();
-        switch(valg){
+
+        switch (valg) {
             case 1 -> fjernEnPizza();
             case 2 -> fjernHeleOrdre();
             default -> System.out.println("Ikke et validt svar!");
@@ -131,7 +135,7 @@ public class PizzaMenu {
 
         if (BestiltPizzaArrayList.size() != 0) {
             for (int i = 0; i < BestiltPizzaArrayList.size(); i++) {
-                System.out.println("#" + (i+1) + " " + BestiltPizzaArrayList.get(i));
+                System.out.println("#" + (i + 1) + " " + BestiltPizzaArrayList.get(i));
             }
         } else {
             System.out.println("Ingen pizzaer bestilt!");
@@ -139,21 +143,24 @@ public class PizzaMenu {
 
         Scanner sc = new Scanner(System.in);
         int pizzaNum = sc.nextInt();
-        BestiltPizzaArrayList.remove(pizzaNum-1);
+        BestiltPizzaArrayList.remove(pizzaNum - 1);
     }
 
     public void fjernHeleOrdre() {
         System.out.println("Indtast kundens telefonnummer for at fjerne bestillingen.");
         Scanner sc = new Scanner(System.in);
+
         int kundeTlf = sc.nextInt();
         boolean ordreFundet = false;
-        for ( int i = 0; i < BestiltPizzaArrayList.size(); i++){
-            if (BestiltPizzaArrayList.get(i).getKundeTlf() == kundeTlf ){
+
+        for (int i = 0; i < BestiltPizzaArrayList.size(); i++) {
+            if (BestiltPizzaArrayList.get(i).getKundeTlf() == kundeTlf) {
                 BestiltPizzaArrayList.remove(i);
                 i--;
                 ordreFundet = true;
             }
         }
+
         if (ordreFundet) {
             System.out.println("Ordre fjernet.");
         } else {

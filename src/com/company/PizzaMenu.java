@@ -51,7 +51,7 @@ public class PizzaMenu {
         Scanner sc = new Scanner(System.in);
         if (BestiltPizzaArrayList.size() != 0) {
             for (int i = 0; i < BestiltPizzaArrayList.size(); i++) {
-                System.out.println(BestiltPizzaArrayList.get(i));
+                System.out.println("#" + (i+1) + " " + BestiltPizzaArrayList.get(i));
             }
         } else {
             System.out.println("Ingen pizzaer bestilt!");
@@ -129,6 +129,17 @@ public class PizzaMenu {
     public void fjernEnPizza() {
         System.out.println("Indtast ordres nummer som skal fjernes.");
 
+        if (BestiltPizzaArrayList.size() != 0) {
+            for (int i = 0; i < BestiltPizzaArrayList.size(); i++) {
+                System.out.println("#" + (i+1) + " " + BestiltPizzaArrayList.get(i));
+            }
+        } else {
+            System.out.println("Ingen pizzaer bestilt!");
+        }
+
+        Scanner sc = new Scanner(System.in);
+        int pizzaNum = sc.nextInt();
+        BestiltPizzaArrayList.remove(pizzaNum-1);
     }
 
     public void fjernHeleOrdre() {

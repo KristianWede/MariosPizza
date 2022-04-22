@@ -33,8 +33,7 @@ public class UI {
                 case 2 -> pizzaMenu.printBestiltPizzaMenu();
                 case 3 -> pizzaMenu.tilfoejPizza();
                 case 4 -> pizzaMenu.fjernPizzaValg();
-                case 5 -> System.out.println("Case5");
-                case 6 -> System.exit(0);
+                case 5 -> System.exit(0);
                 default -> System.out.println("Ikke et validt svar!");
             }
 
@@ -49,8 +48,7 @@ public class UI {
         System.out.println("2: Liste over bestillinger");
         System.out.println("3: Tilføj ordre");
         System.out.println("4: Afhent ordre");
-        System.out.println("5: Annuller ordre");
-        System.out.println("6: Luk ned");
+        System.out.println("5: Luk ned");
 
     }
 

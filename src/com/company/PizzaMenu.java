@@ -96,7 +96,17 @@ public class PizzaMenu {
 
         for (int i = 0; i < pizzaAntal; i++) {
             System.out.println("Hvilken pizza vil du gerne bestille?");
-            pizzaNummer = sc.nextInt();
+
+            boolean answer = false;
+            do{
+                pizzaNummer = sc.nextInt();
+            if (pizzaNummer > 0 && pizzaNummer < 13) {
+                answer = true;
+            } else {
+                System.out.println("Vælg en gyldig pizza.");
+            }
+            }while(!answer);
+
             System.out.println("Pizza nummer: " + (i + 1));
             for (int k = 0; k < pizzaArrayList.size(); k++) {
                 if (pizzaArrayList.get(k).getPizzaNum() == pizzaNummer) {

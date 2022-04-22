@@ -69,24 +69,8 @@ public class PizzaMenu {
     public void tilfoejPizza() {
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Indtast antal af pizzaer du vil bestille: ");
-        int pizzaAntal = sc.nextInt();
 
-        for(int i = 0; i<pizzaAntal; i++){
-            System.out.println("Hvilken pizza vil du gerne bestille?");
-            int pizzaNummer = sc.nextInt();
-            System.out.println("Pizza nummer: " + (i+1));
-            for (int k = 0; k < pizzaArrayList.size(); k++) {
-                if (pizzaArrayList.get(k).getPizzaNum() == pizzaNummer) {
-                    System.out.println(pizzaArrayList.get(k));
-
-
-                }
-            }
-        }
-
-
-        int pizzaNummer = sc.nextInt();
+        int pizzaNummer;
         System.out.println("Indtast kundens tlf:");
         int kundeTlf = sc.nextInt();
 
@@ -101,21 +85,31 @@ public class PizzaMenu {
             } else {
                 System.out.println("Skriv enten ja eller nej.");
             }
-        }while(!svar);
+        } while (!svar);
 
 
-        //Sammenligner indtastet pizzanummer og finder den rette pizza, hvorefter den så bliver lavet om til et bestiltPizza plus alt andet indtastet info.
-        for (int i = 0; i < pizzaArrayList.size(); i++) {
-            if ( pizzaArrayList.get(pizzaNummer) == pizzaArrayList.get(i)) {
-                Pizza tmp = pizzaArrayList.get(i);
-                BestiltPizza tmp2 = new BestiltPizza(tmp.getPizzaNum(),tmp.getPizzaName(),tmp.getPizzaBeskrivelse(),tmp.getPizzaPris(),kundeTlf,tidspunkt(),takeAway);
-                for( int j = 0; j < pizzaAntal; j++) {
+        System.out.println("Indtast antal af pizzaer du vil bestille: ");
+        int pizzaAntal = sc.nextInt();
+
+        for (int i = 0; i < pizzaAntal; i++) {
+            System.out.println("Hvilken pizza vil du gerne bestille?");
+            pizzaNummer = sc.nextInt();
+            System.out.println("Pizza nummer: " + (i + 1));
+            for (int k = 0; k < pizzaArrayList.size(); k++) {
+                if (pizzaArrayList.get(k).getPizzaNum() == pizzaNummer) {
+                    System.out.println(pizzaArrayList.get(k));
+
+                    Pizza tmp = pizzaArrayList.get(k);
+                    BestiltPizza tmp2 = new BestiltPizza(tmp.getPizzaNum(), tmp.getPizzaName(), tmp.getPizzaBeskrivelse(), tmp.getPizzaPris(), kundeTlf, tidspunkt(), takeAway);
                     BestiltPizzaArrayList.add(tmp2);
+
                 }
             }
         }
         System.out.println("Ordre bestilt.");
     }
+
+        //Sammenligner indtastet pizzanummer og finder den rette pizza, hvorefter den så bliver lavet om til et bestiltPizza plus alt andet indtastet info.
 
     public void fjernPizzaValg(){
         System.out.println("Hvad vil du fjerne fra en ordre?");
